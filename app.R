@@ -1,0 +1,16 @@
+source("util.R")
+source("server.R")
+source("parser.R")
+source("database.R")
+packages <- c("shiny", "stringr", "lattice", "markdown", "leaflet")
+installPackages(packages)
+library(shiny)
+library(stringr)
+library(lattice)
+library(markdown)
+library(leaflet)
+library(xml2)
+
+createTables()
+
+shinyApp(ui = page, server = server)
